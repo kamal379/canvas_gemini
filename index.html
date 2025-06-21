@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Mechanics Principles: A Visual Comparison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .section-title {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: #1e293b; /* slate-800 */
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #e2e8f0; /* slate-200 */
+            padding-bottom: 0.5rem;
+        }
+        .bern-color { color: #0369a1; /* sky-700 */ }
+        .arch-color { color: #047857; /* emerald-700 */ }
+        .pasc-color { color: #4f46e5; /* indigo-600 */ }
+        
+        .bern-bg { background-color: #f0f9ff; /* sky-50 */ }
+        .arch-bg { background-color: #ecfdf5; /* emerald-50 */ }
+        .pasc-bg { background-color: #eef2ff; /* indigo-50 */ }
+
+        .bern-border { border-color: #0ea5e9; /* sky-500 */ }
+        .arch-border { border-color: #10b981; /* emerald-500 */ }
+        .pasc-border { border-color: #6366f1; /* indigo-500 */ }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .styled-table th, .styled-table td {
+            padding: 1rem 1.25rem;
+            text-align: left;
+        }
+        .styled-table thead th {
+            font-weight: 600;
+            color: white;
+        }
+        .styled-table tbody tr {
+            border-bottom: 1px solid #e2e8f0; /* slate-200 */
+        }
+        .styled-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        .styled-table tbody td:first-child {
+            font-weight: 600;
+            color: #334155; /* slate-700 */
+        }
+        .formula-cell {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #f1f5f9; /* slate-100 */
+            font-size: 0.9rem;
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        .icon-svg {
+            display: inline-block;
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            color: #64748b; /* slate-500 */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-10">
+    <div class="max-w-7xl mx-auto">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Core Principles of Fluid Mechanics</h1>
+            <p class="mt-3 text-lg text-slate-600">A Visual Guide to Bernoulli, Archimedes, & Pascal</p>
+        </header>
+        
+        <section id="overview">
+            <h2 class="section-title">High-Level Overview</h2>
+            <div class="overflow-x-auto bg-white p-2 rounded-xl shadow-lg">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th class="bg-slate-600">Aspect</th>
+                            <th class="bern-color bg-sky-600">Bernoulli (Hydrodynamics)</th>
+                            <th class="arch-color bg-emerald-600">Archimedes (Hydrostatics)</th>
+                            <th class="pasc-color bg-indigo-600">Pascal (Hydrostatics)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white hover:bg-slate-50">
+                            <td><svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H5v-2H3v-2H1v-4a6 6 0 017.743-5.743L13 5h2v2h2v2z"></path></svg>Key Quantity</td>
+                            <td>Energy/pressure along a streamline</td>
+                            <td>Buoyant force</td>
+                            <td>Pressure transmission</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-slate-50">
+                            <td><svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"></path></svg>State of Fluid</td>
+                            <td>Moving, ideal (inviscid) flow</td>
+                            <td>Fluid at rest</td>
+                            <td>Fluid at rest, confined</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-slate-50">
+                            <td><svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.657 7.343A8 8 0 0117.657 18.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.001 12h-1.122L9.879 16.121z"></path></svg>What it Explains</td>
+                            <td>How pressure drops when speed rises</td>
+                            <td>Why objects float or sink</td>
+                            <td>How applied pressure appears everywhere</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-slate-50">
+                           <td><svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Industrial Leverage</td>
+                           <td>Converts pressure to velocity & vice-versa</td>
+                           <td>Uses buoyant force for support/measurement</td>
+                           <td>Multiplies force via area ratio</td>
+                        </tr>
+                         <tr class="bg-white hover:bg-slate-50">
+                            <td><svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>Canonical Equation</td>
+                            <td class="formula-cell bern-color">P + ½ρv² + ρgh = const.</td>
+                            <td class="formula-cell arch-color">Fₛ = ρ_f ⋅ g ⋅ V_disp</td>
+                            <td class="formula-cell pasc-color">ΔP = F/A (applied)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="details" class="mt-16">
+            <h2 class="section-title">In-Depth Principles</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bern-bg rounded-xl shadow-lg border-l-4 bern-border p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold bern-color mb-3">1. Bernoulli’s Principle</h3>
+                    <blockquote class="border-l-4 bern-border pl-4 italic text-slate-700 mb-4">
+                        Along a streamline in steady, incompressible, non‑viscous flow, the sum of static pressure, dynamic pressure (½ρv²) and hydrostatic head (ρgh) is constant.
+                    </blockquote>
+                    <p class="mb-4"><strong class="text-slate-800">Intuition:</strong> Fast‑moving fluid “spends” pressure energy on kinetic energy; slow fluid “gains” pressure.</p>
+                    <h4 class="font-semibold text-slate-800 mb-2">Representative Applications:</h4>
+                    <ul class="space-y-2 text-slate-700 list-disc list-inside flex-grow">
+                        <li><strong>Aircraft Wings:</strong> Faster air over the top surface lowers pressure, generating lift.</li>
+                        <li><strong>Venturi Meters:</strong> Calculate flow rate from pressure drop in a constricted pipe.</li>
+                        <li><strong>Atomizers & Sprayers:</strong> Low pressure entrains and atomizes liquid.</li>
+                        <li><strong>Pitot Tubes:</strong> Convert velocity into a measurable pressure difference.</li>
+                    </ul>
+                </div>
+                <div class="arch-bg rounded-xl shadow-lg border-l-4 arch-border p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold arch-color mb-3">2. Archimedes’ Principle</h3>
+                     <blockquote class="border-l-4 arch-border pl-4 italic text-slate-700 mb-4">
+                        An immersed body experiences an upward buoyant force equal to the weight of the fluid it displaces.
+                    </blockquote>
+                    <p class="mb-4"><strong class="text-slate-800">Intuition:</strong> Pressure rises with depth; the deeper bottom surface of an object feels a larger force than its top, creating a net upward force.</p>
+                    <h4 class="font-semibold text-slate-800 mb-2">Representative Applications:</h4>
+                    <ul class="space-y-2 text-slate-700 list-disc list-inside flex-grow">
+                        <li><strong>Ships & Submarines:</strong> Hull displaces water weight equal to the vessel's weight.</li>
+                        <li><strong>Hydrometers:</strong> Float depth directly measures a liquid's density.</li>
+                        <li><strong>Hot-Air Balloons:</strong> Displace heavier, cooler air to generate lift.</li>
+                        <li><strong>Purity Tests:</strong> Determine an object's density by measuring displaced fluid.</li>
+                    </ul>
+                </div>
+                <div class="pasc-bg rounded-xl shadow-lg border-l-4 pasc-border p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold pasc-color mb-3">3. Pascal’s Law</h3>
+                     <blockquote class="border-l-4 pasc-border pl-4 italic text-slate-700 mb-4">
+                        A change of pressure applied to an incompressible fluid in a completely enclosed container is transmitted undiminished in all directions.
+                    </blockquote>
+                    <p class="mb-4"><strong class="text-slate-800">Intuition:</strong> Because liquids are almost incompressible, pushing at one point instantly “pushes” every other point equally.</p>
+                    <h4 class="font-semibold text-slate-800 mb-2">Representative Applications:</h4>
+                    <ul class="space-y-2 text-slate-700 list-disc list-inside flex-grow">
+                        <li><strong>Hydraulic Press & Lifts:</strong> Small input force creates a large output force.</li>
+                        <li><strong>Vehicle Braking Systems:</strong> Pedal force is multiplied to clamp brake pads.</li>
+                        <li><strong>Injection Moulding:</strong> Uniform pressure fills intricate mould cavities.</li>
+                        <li><strong>Heavy Machinery:</strong> Powers excavators, steering, and control actuators.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="applications" class="mt-16">
+            <h2 class="section-title">Putting Them Together: Practical Scenarios</h2>
+            <div class="overflow-x-auto bg-white p-2 rounded-xl shadow-lg">
+                <table class="styled-table">
+                     <thead class="bg-slate-600 text-white">
+                        <tr>
+                            <th>Situation</th>
+                            <th>Principle(s) at Play</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-slate-50"><td>Water jet powering a Pelton wheel</td><td><span class="tag bern-color bern-bg">Bernoulli</span></td><td>Converts pressure head to kinetic energy.</td></tr>
+                        <tr class="hover:bg-slate-50"><td>A scuba diver’s buoyancy control device</td><td><span class="tag arch-color arch-bg">Archimedes</span> <span class="tag pasc-color pasc-bg">Pascal</span></td><td>Buoyancy from displaced water; Pascal transmits gas pressure to inflate bladder.</td></tr>
+                        <tr class="hover:bg-slate-50"><td>Lifting a car with a workshop jack</td><td><span class="tag pasc-color pasc-bg">Pascal</span></td><td>Pressure is propagated equally, amplifying force.</td></tr>
+                        <tr class="hover:bg-slate-50"><td>Designing ballast in a cargo ship</td><td><span class="tag arch-color arch-bg">Archimedes</span></td><td>Corrects net buoyant force for varying load.</td></tr>
+                        <tr class="hover:bg-slate-50"><td>Measuring river discharge with a venturi flume</td><td><span class="tag bern-color bern-bg">Bernoulli</span></td><td>Flow speed is inferred from pressure differences.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="distinctions" class="mt-16">
+            <h2 class="section-title">Key Distinctions Summarized</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8 space-y-4">
+                <p class="text-lg text-slate-800"><strong class="bern-color">Bernoulli</strong> connects energy conservation in <strong class="font-semibold">moving</strong> fluids.</p>
+                <p class="text-lg text-slate-800"><strong class="arch-color">Archimedes</strong> is about force balance due to static pressure gradient in fluids at <strong class="font-semibold">rest</strong>.</p>
+                <p class="text-lg text-slate-800"><strong class="pasc-color">Pascal</strong> concerns how pressure itself behaves in a <strong class="font-semibold">confined, static</strong> fluid—and how that lets us multiply force.</p>
+            </div>
+        </section>
+        
+    </div>
+</body>
+</html>
