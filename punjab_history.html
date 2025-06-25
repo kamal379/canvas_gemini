@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Punjab: A Timeline (1469-Present)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Styling for the timeline line and circles */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background-color: #cbd5e1; /* slate-300 */
+        }
+        .timeline-item-dot {
+            position: absolute;
+            top: 20px; /* Align with the top of the content box */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1.25rem; /* 20px */
+            height: 1.25rem; /* 20px */
+            border-radius: 9999px; /* full */
+            background-color: #ffffff; /* white */
+            border: 3px solid #4f46e5; /* indigo-600 */
+            z-index: 10;
+        }
+        
+        /* Arrow pointers for timeline items */
+        .timeline-content::after {
+            content: " ";
+            position: absolute;
+            top: 22px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        /* Positioning for left and right items */
+        .timeline-item-left .timeline-content {
+            margin-right: 3rem; /* md:mr-12 */
+        }
+        .timeline-item-left .timeline-content::after {
+            right: -10px;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #f9fafb; /* bg-gray-50 */
+        }
+
+        .timeline-item-right .timeline-content {
+            margin-left: 3rem; /* md:ml-12 */
+        }
+        .timeline-item-right .timeline-content::after {
+            left: -10px;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #f9fafb transparent transparent; /* bg-gray-50 */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .timeline-container::before {
+                left: 10px;
+                transform: translateX(0);
+            }
+            .timeline-item-dot {
+                left: 10px;
+                transform: translateX(-50%);
+            }
+            .timeline-item-left .timeline-content,
+            .timeline-item-right .timeline-content {
+                margin-left: 2.5rem; /* ml-10 */
+                margin-right: 0;
+                width: calc(100% - 3rem);
+            }
+             .timeline-item-left .timeline-content::after,
+            .timeline-item-right .timeline-content::after {
+                left: -10px;
+                right: auto;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent #f9fafb transparent transparent;
+            }
+            .timeline-item-left, .timeline-item-right {
+                justify-content: flex-start;
+                padding-left: 0;
+                padding-right: 0;
+            }
+             .timeline-item-left > div, .timeline-item-right > div {
+                 width: 100%;
+             }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-indigo-700">History of Punjab</h1>
+            <p class="text-lg text-slate-600 mt-2">A Journey Through Time (1469 – Present)</p>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="relative timeline-container">
+            <!-- Timeline Item: Sikh Gurus Period -->
+            <div class="relative flex justify-between md:justify-normal md:odd:flex-row-reverse group timeline-item-left">
+                <!-- Dot -->
+                <div class="timeline-item-dot"></div>
+                <!-- Content -->
+                <div class="w-full md:w-5/12">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-content transition-transform duration-300 group-hover:scale-105">
+                        <time class="text-sm font-semibold text-indigo-600">1469 – 1708</time>
+                        <h3 class="text-xl font-bold mt-1 mb-2">The Sikh Gurus Period</h3>
+                        <p class="text-slate-600 text-sm">
+                            This foundational era began with the birth of Guru Nanak Dev ji (1469). Key events include the compilation of the Adi Granth (1604) by Guru Arjan Dev ji and the founding of the Khalsa (1699) by Guru Gobind Singh ji, which shaped Sikh identity and principles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item: Rise of Sikh Power -->
+            <div class="relative flex justify-between md:justify-normal md:odd:flex-row-reverse group timeline-item-right">
+                <div class="timeline-item-dot"></div>
+                <div class="w-full md:w-5/12">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-content transition-transform duration-300 group-hover:scale-105">
+                        <time class="text-sm font-semibold text-indigo-600">1710 – 1799</time>
+                        <h3 class="text-xl font-bold mt-1 mb-2">Rise of Sikh Power & Misls</h3>
+                        <p class="text-slate-600 text-sm">
+                            Following the Gurus, Banda Singh Bahadur led significant military campaigns (1710-1715). The period was marked by struggles against Mughals and Afghans, including the devastating Ghalugharas (massacres). The Sikhs organized into Misls (confederacies), which controlled Punjab by 1767.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item: Ranjit Singh's Empire -->
+            <div class="relative flex justify-between md:justify-normal md:odd:flex-row-reverse group timeline-item-left">
+                <div class="timeline-item-dot"></div>
+                <div class="w-full md:w-5/12">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-content transition-transform duration-300 group-hover:scale-105">
+                        <time class="text-sm font-semibold text-indigo-600">1799 – 1839</time>
+                        <h3 class="text-xl font-bold mt-1 mb-2">The Sikh Empire</h3>
+                        <p class="text-slate-600 text-sm">
+                            Maharaja Ranjit Singh, born in 1780, unified the Sikh Misls and established a vast, secular empire. He captured Lahore in 1799 and his rule is considered a golden age of stability, military strength, and prosperity in Punjab. He signed the Treaty of Amritsar with the British in 1809.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item: Anglo-Sikh Wars -->
+            <div class="relative flex justify-between md:justify-normal md:odd:flex-row-reverse group timeline-item-right">
+                <div class="timeline-item-dot"></div>
+                <div class="w-full md:w-5/12">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-content transition-transform duration-300 group-hover:scale-105">
+                        <time class="text-sm font-semibold text-indigo-600">1839 – 1849</time>
+                        <h3 class="text-xl font-bold mt-1 mb-2">Anglo-Sikh Wars & British Annexation</h3>
+                        <p class="text-slate-600 text-sm">
+                            After Ranjit Singh's death in 1839, political instability led to two major conflicts with the British. The First (1845-46) and Second (1848-49) Anglo-Sikh Wars resulted in the defeat of the Sikh army and the British annexation of Punjab on March 29, 1849.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item: Partition -->
+            <div class="relative flex justify-between md:justify-normal md:odd:flex-row-reverse group timeline-item-left">
+                <div class="timeline-item-dot"></div>
+                <div class="w-full md:w-5/12">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-content transition-transform duration-300 group-hover:scale-105">
+                        <time class="text-sm font-semibold text-indigo-600">1947</time>
+                        <h3 class="text-xl font-bold mt-1 mb-2">Partition of British India</h3>
+                        <p class="text-slate-600 text-sm">
+                            With the end of British rule, the Punjab province was brutally dismembered. The division created West Punjab (in Pakistan) and East Punjab (in India), leading to one of the largest and most violent mass migrations in human history.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item: Modern Punjab -->
+            <div class="relative flex justify-between md:justify-normal md:odd:flex-row-reverse group timeline-item-right">
+                <div class="timeline-item-dot"></div>
+                <div class="w-full md:w-5/12">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-content transition-transform duration-300 group-hover:scale-105">
+                        <time class="text-sm font-semibold text-indigo-600">1966</time>
+                        <h3 class="text-xl font-bold mt-1 mb-2">Formation of Modern Punjab</h3>
+                        <p class="text-slate-600 text-sm">
+                           On November 1, based on the Punjabi Suba movement, the Indian state of Punjab was reorganized on linguistic lines. This created the new states of Haryana and Himachal Pradesh, with Chandigarh becoming a Union Territory and the shared capital of Punjab and Haryana.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
